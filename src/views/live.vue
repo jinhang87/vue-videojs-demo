@@ -70,6 +70,7 @@ export default {
         overNative: true,
         autoplay: false,
         controls: true,
+        aspectRatio: "16:9",
         techOrder: ['flash', 'html5'],
         sourceOrder: true,
         flash: {
@@ -80,22 +81,24 @@ export default {
         sources: [
           {
             type: 'rtmp/mp4',
-            src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov'
+            //src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov'
+            src: 'rtmp://58.200.131.2:1935/livetv/hunantv' //湖南电视台
           },
           {
             withCredentials: false,
             type: 'application/x-mpegURL',
-            src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
+            // src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
+            src: 'http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8'//中央6台
           }
         ],
-        poster: isProduction ? '/vue-videojs-demo/static/images/logo.png' : '/static/images/logo.png'
-        // controlBar: {
-        //   timeDivider: false, // 时间分割线
-        //   durationDisplay: false, // 总时间
-        //   progressControl: true, // 进度条
-        //   customControlSpacer: true, // 未知
-        //   fullscreenToggle: true // 全屏
-        // },
+        poster: isProduction ? '/vue-videojs-demo/static/images/logo.png' : '/static/images/logo.png',
+        //controlBar: {
+        timeDivider: false, // 时间分割线
+        durationDisplay: false, // 总时间
+        progressControl: true, // 进度条
+        customControlSpacer: true, // 未知
+        fullscreenToggle: true // 全屏
+        //},
       }
     }
   },
